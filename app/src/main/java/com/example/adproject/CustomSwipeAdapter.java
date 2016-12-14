@@ -55,29 +55,20 @@ public class CustomSwipeAdapter extends PagerAdapter{
         View item_view = layoutInflater.inflate(R.layout.swipe_layout,container, false);
         final ImageView imageView = (ImageView) item_view.findViewById(R.id.image_view);
         imageView.setLongClickable(true);
-        // final Vibrator vibrator = (Vibrator) ctx.getSystemService(VIBRATOR_SERVICE);
-        // imageView.setOnLongClickListener(       );
         TextView textView = (TextView) item_view.findViewById(R.id.image_count);
         imageView.setImageResource(image_resources[position]);
-        // MediaPlayer mp1 = MediaPlayer.create(ctx, R.raw.nick);
-        // mp1.start();
         imageView.setOnLongClickListener(new View.OnLongClickListener() {
 
             @Override
             public boolean onLongClick(View v) {
-                // vibrator.vibrate(10);
-
-
-                // Toast.makeText(ctx, toast_resources[position],Toast.LENGTH_LONG) .show();
+                // shows the message
                 Toast toast=Toast.makeText(ctx, toast_resources[position],Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 300);
                 toast.show();
-
-
-
-
+                // audible sound
                 MediaPlayer mp1 = MediaPlayer.create(ctx, R.raw.nick);
                 mp1.start();
+                // image animation
                 TranslateAnimation animation = new TranslateAnimation(0, 0, 0, 100);
                 animation.setDuration(750);
                 animation.setRepeatCount(5);
@@ -88,29 +79,17 @@ public class CustomSwipeAdapter extends PagerAdapter{
             }
         });
 
-        // imageView.setImageResource(R.drawable.dino1);
+        // top text definetion displayed
         textView.setText (isim_resources[position]);
-        // Toast.makeText(ctx, toast_resources[position],Toast.LENGTH_LONG) .show();
-        // Toast.makeText(ctx, "pozisyon:"+position,Toast.LENGTH_SHORT) .show();
-        // textView.setText ("Image...: "+position);
-        // MediaPlayer mp1 = MediaPlayer.create(ctx, R.raw.nick);
-        //  mp1.start();
-        // mp1.release();
         container.addView(item_view);
-        // MediaPlayer mp1 = MediaPlayer.create(ctx, R.raw.nick);
-        // mp1.start();
-        // Toast.makeText(ctx, "deneme",Toast.LENGTH_LONG) .show();
-        //Toast.makeText(ctx, toast_resources[position],Toast.LENGTH_LONG) .show();
         return item_view;
 
     }
 
+    // destroyItem is useful to release resources for better performance
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((LinearLayout) object);
-        // MediaPlayer mp1 = MediaPlayer.create(ctx, R.raw.nick);
-        // mp1.start();
-        // Toast.makeText(ctx, "deneme222",Toast.LENGTH_LONG) .show();
 
     }
 }

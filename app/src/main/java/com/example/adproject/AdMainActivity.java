@@ -30,29 +30,18 @@ public class AdMainActivity extends AppCompatActivity {
         AdRequest adRequest = new AdRequest.Builder()
                 .setRequestAgent("android_studio:ad_template").build();
         adView.loadAd(adRequest);
+     }
 
-        // Toasts the test ad message on the screen. Remove this after defining your own ad unit ID.
-        // Toast.makeText(this, TOAST_TEXT, Toast.LENGTH_LONG).show();
-        // Toast.makeText(this, "deneme", Toast.LENGTH_LONG).show();
-
-
-
-    }
-
-
-
+    // define button
     public void klikle(View v)
     {
-
-        //Toast.makeText(this, "deneme", Toast.LENGTH_LONG).show();
-
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         adapter = new CustomSwipeAdapter(this);
         viewPager.setAdapter(adapter);
+        // below is not necessary because it is made invisible right after
         ((Button) v).setText(" Başa Dön ");
         View b = findViewById(R.id.button);
         b.setVisibility(View.GONE);
-
     }
 
     @Override
@@ -61,16 +50,6 @@ public class AdMainActivity extends AppCompatActivity {
          getMenuInflater().inflate(R.menu.menu_ad_main, menu);
          return true;
      }
-
-
-    // public void buttonOnClick(View v) {
-// do something when the button is clicked
-        // Button button=(Button) v;
-        // ((Button) v).setText("clicked");
-     //   Toast.makeText(this  , "deneme",Toast.LENGTH_LONG) .show();
-    // }
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
