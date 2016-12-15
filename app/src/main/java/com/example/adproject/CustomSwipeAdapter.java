@@ -2,8 +2,10 @@ package com.example.adproject;
 
 import android.content.Context;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Vibrator;
 import android.support.v4.view.PagerAdapter;
+import android.telephony.TelephonyManager;
 import android.text.Layout;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -30,6 +32,7 @@ public class CustomSwipeAdapter extends PagerAdapter{
             "666666", "7777777", "88888888"};
     private Context ctx;
     private LayoutInflater layoutInflater;
+    String identifier = null;
 
     public CustomSwipeAdapter(Context ctx)
     {
@@ -65,15 +68,27 @@ public class CustomSwipeAdapter extends PagerAdapter{
                 Toast toast=Toast.makeText(ctx, toast_resources[position],Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 300);
                 toast.show();
-                // audible sound
-                MediaPlayer mp1 = MediaPlayer.create(ctx, R.raw.nick);
-                mp1.start();
+
+                // get device info
+                // Toast.makeText(ctx, "SDK:"+(Build.VERSION.SDK_INT)+" DEVICE:"+(Build.BRAND)+" VERSION:"+(Build.VERSION.RELEASE),Toast.LENGTH_LONG) .show();
+
+                // get IMEI information in identifier
+                TelephonyManager tm = (TelephonyManager)ctx.getSystemService(Context.TELEPHONY_SERVICE);
+                String identifier = tm.getDeviceId();
+                // if identifier is not null then it is a mobile phone otherwise it is a tablet
+                // no sound if it is a tablet
+                if (identifier!=null) {
+                    // audible sound
+                    // sound section doesnt work on nexus 7
+                    MediaPlayer mp1 = MediaPlayer.create(ctx, R.raw.nick);
+                    mp1.start();
+                }
                 // image animation
                 TranslateAnimation animation = new TranslateAnimation(0, 0, 0, 100);
                 animation.setDuration(750);
                 animation.setRepeatCount(5);
-                // animation.setRepeatMode (2);
-                // animation.setFillAfter(true);
+                // * animation.setRepeatMode (2);
+                // * animation.setFillAfter(true);
                 imageView.startAnimation(animation);
                 return true;
             }
