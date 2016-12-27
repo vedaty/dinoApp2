@@ -24,12 +24,13 @@ import static android.content.Context.VIBRATOR_SERVICE;
  */
 
 public class CustomSwipeAdapter extends PagerAdapter{
-    private int[] image_resources = {R.drawable.dino01, R.drawable.dino02, R.drawable.dino03, R.drawable.dino04,
-            R.drawable.dino05, R.drawable.dino06, R.drawable.dino07, R.drawable.dino08};
-    private String[] isim_resources = {"BIR", "IKI", "UC", "DORT", "BES",
-            "ALTI", "YEDI", "SEKIZ"};
-    private String[] toast_resources = {"1", "22", "333", "4444", "55555",
-            "666666", "7777777", "88888888"};
+    private int[] image_resources = {R.drawable.d01, R.drawable.d02, R.drawable.d03, R.drawable.d04,
+            R.drawable.d05, R.drawable.d06, R.drawable.d07, R.drawable.d08, R.drawable.d09, R.drawable.d10};
+    private String[] isim_resources = {"Sevimliyus", "Yerebakanus", "Dişlerikamaşanus", "Çokboynus", "Maviyus",
+            "Kabarıkus", "Kırmızus", "Turuncus", "Uçarus", "Tekboynus"};
+    private String[] toast_resources = {"1 Brontosaurus", "2 Stegosaurus", "3 Tyrannosaurus Rex", "4 Triceratops",
+            "5 Apatosaurus", "6 Euoplocephalus", "7 Giganotosaurus", "8 Styracosaurus", "9 Pterosaurs",
+            "10 Saurolophus"};
     private Context ctx;
     private LayoutInflater layoutInflater;
     String identifier = null;

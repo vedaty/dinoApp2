@@ -6,6 +6,7 @@ import com.google.android.gms.ads.AdView;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,6 +31,13 @@ public class AdMainActivity extends AppCompatActivity {
         AdRequest adRequest = new AdRequest.Builder()
                 .setRequestAgent("android_studio:ad_template").build();
         adView.loadAd(adRequest);
+
+        // shows the help message
+        //Toast toast=Toast.makeText(this, "Başlat tuşuna basarak başlayabilirsiniz. Başladıktan sonra dinozorların üstüne uzun basarak gerçek adını ve özelliklerini görebilirsiniz.", Toast.LENGTH_LONG).show();
+        Toast toast=Toast.makeText(this, "Başlat tuşuna basarak başlayabilirsiniz. Başladıktan sonra dinozorların üstüne uzun basarak gerçek adını ve özelliklerini görebilirsiniz.",Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 300);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.show();
      }
 
     // define button

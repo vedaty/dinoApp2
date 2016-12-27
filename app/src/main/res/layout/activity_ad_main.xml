@@ -14,7 +14,7 @@
         android:layout_marginTop="0dp"
         android:typeface="serif"
         android:textColor="#ff0000"
-        android:text="@string/hello_world" />
+        android:text="Sevimli Dinozorlar" />
 
     <ImageView
         android:id="@+id/view1_pager"
@@ -22,7 +22,7 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:scaleType="fitCenter"
-        android:src="@drawable/dino00"
+        android:src="@drawable/d00"
         android:layout_above="@+id/button" />
 
     <Button
