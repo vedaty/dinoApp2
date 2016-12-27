@@ -26,11 +26,19 @@ import static android.content.Context.VIBRATOR_SERVICE;
 public class CustomSwipeAdapter extends PagerAdapter{
     private int[] image_resources = {R.drawable.d01, R.drawable.d02, R.drawable.d03, R.drawable.d04,
             R.drawable.d05, R.drawable.d06, R.drawable.d07, R.drawable.d08, R.drawable.d09, R.drawable.d10};
-    private String[] isim_resources = {"Sevimliyus", "Yerebakanus", "Dişlerikamaşanus", "Çokboynus", "Maviyus",
-            "Kabarıkus", "Kırmızus", "Turuncus", "Uçarus", "Tekboynus"};
-    private String[] toast_resources = {"1 Brontosaurus", "2 Stegosaurus", "3 Tyrannosaurus Rex", "4 Triceratops",
-            "5 Apatosaurus", "6 Euoplocephalus", "7 Giganotosaurus", "8 Styracosaurus", "9 Pterosaurs",
-            "10 Saurolophus"};
+    private String[] isim_resources = {"Sevimliyus", "Yerebakanus", "Dişlerikamaşanus", "Çokboynus", "Uzunkuyrukus",
+            "Kabarıkus", "Kocamanus", "Zırhlus", "Uçarus", "Tekboynus"};
+    private String[] toast_resources = {
+            "Brontosaurus: Otçuldur, büyükleri 20 metre boyunda 30 ton ağırlığındadır.",
+            "Stegosaurus: Otçuldur, 150 milyon yıl önce yaşamışlardır.",
+            "Tyrannosaurus: En vahşi avcı türlerin başında gelir, ağrılıkları 10 tonun üstüne kadar çıkar.",
+            "Triceratops: Otçuldur, 3 boynuzu vardır.",
+            "Apatosaurus: Otçuldur, 20-25 metre boyunda 30-32 ton ağırlığındadır.",
+            "Euoplocephalus: Otçuldur, sadece 2 tona kadar büyüyebilir.",
+            "Giganotosaurus: En büyük etçil türdür. Yetişkinleri 12 metreden büyük, 13 tondan ağır olabilir.",
+            "Styracosaurus: Otçuldur, boynuzu dışında kafatasının üstünde yaka gibi görünen bir oluşum vardır.",
+            "Pterosaurs: Uçan bir türdür.",
+            "Saurolophus: Otçuldur, kendine özgü kafa yapısı vardır. Bir çok kıtada var olmuştur."};
     private Context ctx;
     private LayoutInflater layoutInflater;
     String identifier = null;

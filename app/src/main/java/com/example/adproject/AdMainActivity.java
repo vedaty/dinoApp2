@@ -1,3 +1,7 @@
+//  right click your projects root directory and select Git > Add. This will add all your project files to your Git repository.
+//  right click the project name again and this time select Git > Commit Directory.
+//  right click the project name, select Git > Repository > Push.
+
 package com.example.adproject;
 
 import com.google.android.gms.ads.AdRequest;
